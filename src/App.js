@@ -1,6 +1,6 @@
 import "./styles.css";
 import { useSelector, useDispatch, useState } from "react-redux";
-import { incNumber, decNumber } from "./action/index";
+import { incNumber, decNumber, setZero } from "./action/index";
 
 const App = () => {
   const myState = useSelector((state) => state.changeTheNumber);
@@ -31,6 +31,20 @@ const App = () => {
         >
           <span>+</span>
         </a>
+        <div>
+          <button
+            //title =
+            onClick={() => dispatch(setZero())}
+            style={{
+              margin: "10px",
+              background: "white",
+              border: "none",
+              cursor: "pointer"
+            }}
+          >
+            Reset
+          </button>
+        </div>
       </div>
     </div>
   );
